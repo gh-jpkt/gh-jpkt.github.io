@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>KU 2022 2Fal 時間割</title>
+    <link rel="stylesheet" href="school-timetable-2022-2fal.css" />
+    <!-- 時間割データを以下の<script>要素内に記述する
+      "fri 0": {
+          "styleClass": "ddddd",
+          "name": "aaaaa",
+          "link": "bbbbb",
+          "classroom": "ccccc"
+        } -->
+    <script type="application/json" id="lecture-data">
+      {
+        "mon 2": {
+          "styleClass": "kiso-sen",
+          "name": "数理統計",
+          "link": "https://www.k.kyoto-u.ac.jp/student/la/support/top?no=46775&from=%2Fstudent%2Fla%2Ftimeslot%2Ftimeslot_list",
+          "classroom": "4共31"
+        },
+        "mon 3": {
+          "styleClass": "kiso-sen",
+          "name": "Linear Algebra with Exercises B",
+          "link": "https://www.k.kyoto-u.ac.jp/student/la/support/top?no=46980&from=%2Fstudent%2Fla%2Ftimeslot%2Ftimeslot_list",
+          "classroom": "4共41"
+        },
+        "mon 4": {
+          "styleClass": "en",
+          "name": "英語リーディング 単位未修得者クラスESR01",
+          "link": "https://www.k.kyoto-u.ac.jp/student/la/support/top?no=49182&from=%2Fstudent%2Fla%2Ftimeslot%2Ftimeslot_list",
+          "classroom": "共北23(CALL)"
+        },
+        "mon 5": {
+          "styleClass": "sci hyb",
+          "name": "現代数学の基礎Ｂ",
+          "link": "https://www.k.kyoto-u.ac.jp/student/u/s/support/top?no=7029&from=%2Fstudent%2Fla%2Ftimeslot%2Ftimeslot_list",
+          "classroom": "理６－４０１講義室"
+        },
+
+        "tue 2": {
+          "styleClass": "kiso-sen",
+          "name": "Math Exercises B",
+          "link": "",
+          "classroom": "\u00a0"
+        },
+        "tue 3": {
+          "styleClass": "kiso-sen",
+          "name": "Honors Mathematics A-E2",
+          "link": "https://www.k.kyoto-u.ac.jp/student/la/support/top?no=46990&from=%2Fstudent%2Fla%2Ftimeslot%2Ftimeslot_list",
+          "classroom": "共東31"
+        },
+        "tue 4": {
+          "styleClass": "ar",
+          "name": "アラビア語ＩＢ（演習）",
+          "link": "https://www.k.kyoto-u.ac.jp/student/la/support/top?no=48181&from=%2Fstudent%2Fla%2Ftimeslot%2Ftimeslot_list",
+          "classroom": "共西41"
+        },
+
+        "wed 2": {
+          "styleClass": "kiso-sen",
+          "name": "Calculus with Exercises B",
+          "link": "https://www.k.kyoto-u.ac.jp/student/la/support/top?no=46978&from=%2Fstudent%2Fla%2Ftimeslot%2Ftimeslot_list",
+          "classroom": "4共41"
+        },
+        "wed 3": {
+          "styleClass": "sci f2f",
+          "name": "幾何学入門",
+          "link": "https://www.k.kyoto-u.ac.jp/student/u/s/support/top?no=6566&from=%2Fstudent%2Fla%2Ftimeslot%2Ftimeslot_list",
+          "classroom": "理６－４０１講義室"
+        },
+        "wed 4": {
+          "styleClass": "sci f2f",
+          "name": "幾何学入門演習",
+          "link": "https://www.k.kyoto-u.ac.jp/student/u/s/support/top?no=7037&from=%2Fstudent%2Fla%2Ftimeslot%2Ftimeslot_list",
+          "classroom": "理６－４０１講義室"
+        },
+
+        "fri 1": {
+          "styleClass": "kiso-sen",
+          "name": "基礎地球科学B （現在の地球環境の仕組み）",
+          "link": "https://www.k.kyoto-u.ac.jp/student/la/support/top?no=46921&from=%2Fstudent%2Fla%2Ftimeslot%2Ftimeslot_list",
+          "classroom": "4共11"
+        },
+        "fri 2": {
+          "styleClass": "kiso-sen",
+          "name": "関数論",
+          "link": "https://www.k.kyoto-u.ac.jp/student/la/support/top?no=46772&from=%2Fstudent%2Fla%2Ftimeslot%2Ftimeslot_list",
+          "classroom": "共北27"
+        },
+        "fri 3": {
+          "styleClass": "lt",
+          "name": "論理学II",
+          "link": "https://www.k.kyoto-u.ac.jp/student/la/support/top?no=46287&from=%2Fstudent%2Fla%2Ftimeslot%2Ftimeslot_list",
+          "classroom": "4共30"
+        },
+        "fri 4": {
+          "styleClass": "lt",
+          "name": "自己存在論II",
+          "link": "https://www.k.kyoto-u.ac.jp/student/la/support/top?no=46256&from=%2Fstudent%2Fla%2Ftimeslot%2Ftimeslot_list",
+          "classroom": "共西31"
+        },
+        "fri 5": {
+          "styleClass": "ar",
+          "name": "アラビア語ＩＢ（文法）",
+          "link": "https://www.k.kyoto-u.ac.jp/student/la/support/top?no=48179&from=%2Fstudent%2Fla%2Ftimeslot%2Ftimeslot_list",
+          "classroom": "共西41"
+        }
+      }
+    </script>
+    <script defer src="school-timetable-2022-2fal.js"></script>
+  </head>
+  <body>
+    <header>
+      <p>作成日時: <time>2022-09-27</time></p>
+      <p>最終更新日時: <time>2022-10-05</time></p>
+    </header>
+    <main>
+      <h1>KU 2022 2Fal 時間割</h1>
+      <table>
+        <caption>KU 2022 2Fal 時間割 確定版</caption>
+        <colgroup>
+          <col class="header-column" />
+          <col span="5" />
+        </colgroup>
+        <thead>
+          <tr>
+            <td>&nbsp;</td>
+            <th id="1">1</th>
+            <th id="2">2</th>
+            <th id="3">3</th>
+            <th id="4">4</th>
+            <th id="5">5</th>
+          </tr>
+        </thead>
+        <tbody>
+          <template id="daily-data-template">
+            <a target="_blank"></a><hr /><span class="classroom"></span>
+          </template>
+          <tr>
+            <th id="mon">Mon</th>
+            <td headers="mon 1">&nbsp;</td>
+            <td headers="mon 2"></td>
+            <td headers="mon 3"></td>
+            <td headers="mon 4"></td>
+            <td headers="mon 5"></td>
+          </tr>
+          <tr>
+            <th id="tue">Tue</th>
+            <td headers="tue 1">&nbsp;</td>
+            <td headers="tue 2"></td>
+            <td headers="tue 3"></td>
+            <td headers="tue 4"></td>
+            <td headers="tue 5">&nbsp;</td>
+          </tr>
+          <tr>
+            <th id="wed">Wed</th>
+            <td headers="wed 1">&nbsp;</td>
+            <td headers="wed 2"></td>
+            <td headers="wed 3"></td>
+            <td headers="wed 4"></td>
+            <td headers="wed 5">&nbsp;</td>
+          </tr>
+          <tr>
+            <th scope="row">Thu</th>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <th id="fri">Fri</th>
+            <td headers="fri 1"></td>
+            <td headers="fri 2"></td>
+            <td headers="fri 3"></td>
+            <td headers="fri 4"></td>
+            <td headers="fri 5"></td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+  </body>
+</html>

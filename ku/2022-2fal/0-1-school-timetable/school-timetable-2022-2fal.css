@@ -1,0 +1,102 @@
+/** ダークモードへの対応 */
+@media (prefers-color-scheme: light) {
+  :root {
+    --border-outer-color: hsl(270, 100%, 25%);
+    --border-inner-color: hsl(315, 100%, 25%);
+    --en-bg-color: hsl(260, 100%, 80%);
+    --ar-bg-color: hsl(0, 75%, 80%);
+    --lt-bg-color: hsl(60, 100%, 80%);
+    --kisosen-bg-color: hsl(120, 30%, 80%);
+    --sci-bg-color: hsl(120, 100%, 80%);
+    --f2f-border-color: hsl(0, 100%, 80%);
+    --hyb-border-color: hsl(60, 100%, 80%);
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color: hsl(0, 0%, 95%);
+    --bg-color: black;
+    --a-color: hsl(180, 100%, 80%);
+    --border-outer-color: hsl(315, 100%, 75%);
+    --border-inner-color: hsl(270, 100%, 75%);
+    --en-bg-color: hsl(260, 100%, 30%);
+    --ar-bg-color: hsl(0, 75%, 30%);
+    --lt-bg-color: hsl(60, 100%, 20%);
+    --kisosen-bg-color: hsl(120, 30%, 30%);
+    --sci-bg-color: hsl(120, 100%, 20%);
+    --f2f-border-color: hsl(0, 100%, 40%);
+    --hyb-border-color: hsl(60, 100%, 40%);
+  }
+}
+
+/** 文字色と背景色 */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color: var(--color);
+    background-color: var(--bg-color);
+  }
+  a {
+    color: var(--a-color);
+  }
+}
+
+/** <table>要素全体のスタイリング
+ * 外枠を大きくするため, 取り敢えずサイズを少し大きくしている.
+*/
+table {
+  border-collapse: collapse;
+  border: 2.1px solid var(--border-outer-color);
+}
+thead {
+  border: 2.1px solid var(--border-outer-color);
+}
+col.header-column {
+  border: 2.1px solid var(--border-outer-color);
+}
+th, td {
+  border: 2px dashed var(--border-inner-color);
+}
+thead td {
+  width: 5%;
+}
+thead th {
+  width: 15%;
+}
+
+/** 教室名のフォント設定
+ * Referrence:
+ *   どの環境でも綺麗なゴシック体、明朝体のフォントを指定する
+ *   https://gray-code.com/html_css/specify-font-by-css/
+ */
+.classroom {
+  font-family: "游明朝", YuMincho, "Hiragino Mincho ProN W3", "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+}
+
+/** 科目の分野ごとの色分け */
+td.en {
+  background-color: var(--en-bg-color);
+}
+td.ar {
+  background-color: var(--ar-bg-color);
+}
+td.lt {
+  background-color: var(--lt-bg-color);
+}
+td.kiso-sen {
+  background-color: var(--kisosen-bg-color);
+}
+td.sci {
+  background-color: var(--sci-bg-color);
+}
+
+/** 授業方式ごとの色分け */
+td.f2f::before {
+  margin: 0.5rem;
+  border: 3px solid var(--f2f-border-color);
+  content: "対";
+}
+td.hyb::before {
+  margin: 0.5rem;
+  border: 3px solid var(--hyb-border-color);
+  content: "H";
+}
