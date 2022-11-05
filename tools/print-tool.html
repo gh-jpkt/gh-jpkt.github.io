@@ -1,20 +1,26 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width"/>
     <title>スマートフォンから写真印刷</title>
-    <link rel="stylesheet" href="print-tool.css" />
+    <link rel="stylesheet" href="print-tool.css"/>
     <script defer src="print-tool.js"></script>
   </head>
   <body>
-    <main>
+    <main class="a4-paper-vertical">
       <section>
-        <noscript><p>エラー: JavaScriptが無効です.</p></noscript>
+        <noscript>
+          <p>エラー: JavaScriptが無効です.</p>
+        </noscript>
       </section>
-      <secton id="section-file">
+      <secton>
         <label for="input-file">写真を選択する</label>
-        <input type="file" multiple id="input-file" />
+        <input type="file" multiple id="input-file"/>
+        <select name="paper-direction" id="paper-direction">
+          <option value="vertical">縦</option>
+          <option value="horizontal">横</option>
+        </select>
       </secton>
       <section id="section-imgs">
         <div></div>
@@ -23,7 +29,7 @@
         <div class="container"></div>
       </template>
       <template id="template-img">
-        <div><img alt="Selected image" /></div>
+        <div><img alt="Selected image"/></div>
       </template>
     </main>
   </body>

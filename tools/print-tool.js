@@ -1,9 +1,18 @@
+let main = document.querySelector('main');
 let inputFile = document.querySelector('#input-file');
+let selPD = document.querySelector('#paper-direction');
 let sectionImgs = document.querySelector('#section-imgs');
 let tcContainer = document.querySelector('#template-container').content;
 let tcImg = document.querySelector('#template-img').content;
 
 let onFileChange = () => {
+  //Set the page size.
+  if (selPD.selectedIndex == 0) {
+    main.className = 'a4-paper-vertical';
+  }
+  else {
+    main.className = 'a4-paper-horizontal';
+  }
   //Create a new container.
   let newContainer = tcContainer.cloneNode(true);
   for (let file of inputFile.files) {
