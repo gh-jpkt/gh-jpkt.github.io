@@ -4,17 +4,7 @@
   gap: 1em;
 }
 
-.a4-paper {
-  position: fixed;
-  top: 0;
-  left: 0;
-  border: 1px solid black;
-  width: calc(210mm - 24mm);
-  height: calc(297mm - 24mm);
-}
-
 .a4-paper-vertical {
-  position: fixed;
   top: 0;
   left: 0;
   border: 1px solid black;
@@ -23,7 +13,6 @@
 }
 
 .a4-paper-horizontal {
-  position: fixed;
   top: 0;
   left: 0;
   border: 1px solid black;

@@ -5,7 +5,7 @@ let sectionImgs = document.querySelector('#section-imgs');
 let tcContainer = document.querySelector('#template-container').content;
 let tcImg = document.querySelector('#template-img').content;
 
-let onFileChange = () => {
+let updatePage = () => {
   //Set the page size.
   if (selPD.selectedIndex == 0) {
     main.className = 'a4-paper-vertical';
@@ -28,4 +28,5 @@ let onFileChange = () => {
   sectionImgs.querySelector('div').replaceWith(newContainer);
 }
 
-inputFile.addEventListener('change', onFileChange);
+inputFile.addEventListener('change', updatePage);
+selPD.addEventListener('change', updatePage);
