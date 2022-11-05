@@ -1,32 +1,29 @@
-let main = document.querySelector('main');
-let inputFile = document.querySelector('#input-file');
-let selPD = document.querySelector('#paper-direction');
-let sectionImgs = document.querySelector('#section-imgs');
-let tcContainer = document.querySelector('#template-container').content;
-let tcImg = document.querySelector('#template-img').content;
+const styleElement = document.querySelector('#style-page-size');
+const inputFile = document.querySelector('#input-file');
+const selectElement = document.querySelector('#select-paper-direction');
+const sectionImgs = document.querySelector('#section-imgs');
+const tcContainer = document.querySelector('#template-container').content;
+const tcImgContainer = document.querySelector('#template-img-container').content;
 
-let updatePage = () => {
+const PAGE_DIRECTIONS = ['portrait', 'landscape'];
+
+const updatePage = () => {
   //Set the page size.
-  if (selPD.selectedIndex == 0) {
-    main.className = 'a4-paper-vertical';
-  }
-  else {
-    main.className = 'a4-paper-horizontal';
-  }
+  styleElement.textContent =
+    '@page { size: A4 ' + PAGE_DIRECTIONS[selectElement.selectedIndex] + ' }';
+
   //Create a new container.
   let newContainer = tcContainer.cloneNode(true);
   for (let file of inputFile.files) {
-    let newImg = tcImg.cloneNode(true);
-    /*
-    newImg.querySelector('img').src = URL.createObjectURL(file);
-    newContainer.querySelector('div').appendChild(newImg);
-     */
-    newImg.querySelector('img').src = URL.createObjectURL(file);
-    newContainer.querySelector('div').appendChild(newImg);
+    let newImgContainer = tcImgContainer.cloneNode(true);
+    newImgContainer.querySelector('img').src = URL.createObjectURL(file);
+    newContainer.querySelector('div').appendChild(newImgContainer);
   }
+
   //Replace the old container.
   sectionImgs.querySelector('div').replaceWith(newContainer);
 }
 
+//Add event listeners
+selectElement.addEventListener('change', updatePage);
 inputFile.addEventListener('change', updatePage);
-selPD.addEventListener('change', updatePage);

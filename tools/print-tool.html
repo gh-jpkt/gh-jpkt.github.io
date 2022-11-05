@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width"/>
     <title>スマートフォンから写真印刷</title>
     <link rel="stylesheet" href="print-tool.css"/>
+    <style id="style-page-size"></style>
     <script defer src="print-tool.js"></script>
   </head>
   <body>
-    <main class="a4-paper-vertical">
+    <main>
       <section>
         <noscript>
           <p>エラー: JavaScriptが無効です.</p>
@@ -17,7 +18,9 @@
       <secton>
         <label for="input-file">写真を選択する</label>
         <input type="file" multiple id="input-file"/>
-        <select name="paper-direction" id="paper-direction">
+        <label for="paper-direction">用紙の向き:
+        </label>
+        <select name="paper-direction" id="select-paper-direction">
           <option value="vertical">縦</option>
           <option value="horizontal">横</option>
         </select>
@@ -28,7 +31,7 @@
       <template id="template-container">
         <div class="container"></div>
       </template>
-      <template id="template-img">
+      <template id="template-img-container">
         <div class="img-container"><img alt="Selected image"/></div>
       </template>
     </main>
