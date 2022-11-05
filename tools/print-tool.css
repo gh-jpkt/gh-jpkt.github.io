@@ -1,29 +1,38 @@
-main {
-  border: 1px solid black;
-  overflow: scroll;
-}
-
 .a4-portrait {
-  width: calc(210mm - 30mm);
-  height: calc(297mm - 30mm);
+  width: calc(210mm - 40mm);
+  height: calc(297mm - 40mm);
 }
 
 .a4-landscape {
-  width: calc(297mm - 30mm);
-  height: calc(210mm - 30mm);
+  width: calc(297mm - 40mm);
+  height: calc(210mm - 40mm);
 }
 
 .container {
+  position: fixed;
+  top: 0;
+  left: 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   gap: 1em;
 }
 
-.img-container {
-  border: 1px solid black;
-}
-
 img {
   width: 100%;
+}
+
+/* Styles used for debugging */
+main {
+  border: 3px solid black;
+  width: 2000px;
+  height: 2000px;
+}
+
+.container {
+  border: 3px solid red;
+}
+
+.img-box {
+  border: 2px solid aqua;
 }
