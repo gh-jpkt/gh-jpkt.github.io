@@ -20,6 +20,10 @@
   height: calc(210mm - 24mm);
 }
 
+.img-container {
+  border: 1px solid black;
+}
+
 img {
   width: 100%;
 }
