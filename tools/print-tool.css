@@ -2,9 +2,20 @@ main {
   border: 1px solid black;
 }
 
+.a4-portrait {
+  width: calc(210mm - 30mm);
+  height: calc(297mm - 30mm);
+}
+
+.a4-landscape {
+  width: calc(297mm - 30mm);
+  height: calc(210mm - 30mm);
+}
+
 .container {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
   gap: 1em;
 }
 

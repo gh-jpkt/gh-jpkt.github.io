@@ -5,12 +5,17 @@ const sectionImgs = document.querySelector('#section-imgs');
 const tcContainer = document.querySelector('#template-container').content;
 const tcImgContainer = document.querySelector('#template-img-container').content;
 
+let classesMain = document.querySelector('main').classList;
 const PAGE_DIRECTIONS = ['portrait', 'landscape'];
 
 const updatePage = () => {
   //Set the page size.
   styleElement.textContent =
-    '@page { size: A4 ' + PAGE_DIRECTIONS[selectElement.selectedIndex] + ' }';
+    '@page { size: A4 ' + PAGE_DIRECTIONS[selectElement.selectedIndex] + '; }';
+  //Fallback for environments which doesn't support size descriptor.
+  classesMain.remove('a4-portrait');
+  classesMain.remove('a4-landscape');
+  classesMain.add('a4-' + PAGE_DIRECTIONS[selectElement.selectedIndex]);
 
   //Create a new container.
   let newContainer = tcContainer.cloneNode(true);
@@ -23,6 +28,9 @@ const updatePage = () => {
   //Replace the old container.
   sectionImgs.querySelector('div').replaceWith(newContainer);
 }
+
+//Call updatePage() for initialization.
+updatePage();
 
 //Add event listeners
 selectElement.addEventListener('change', updatePage);
