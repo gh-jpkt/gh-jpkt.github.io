@@ -4,6 +4,11 @@
   gap: 1em;
 }
 
+body {
+  width: 210mm;
+  height: 297mm;
+}
+
 img {
   width: 100%;
 }
