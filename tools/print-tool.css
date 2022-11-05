@@ -1,11 +1,11 @@
 .a4-portrait {
-  width: calc(210mm - 100mm);
-  height: calc(297mm - 100mm);
+  width: calc(210mm - 40mm);
+  height: calc(297mm - 40mm);
 }
 
 .a4-landscape {
-  width: calc(297mm - 100mm);
-  height: calc(210mm - 100mm);
+  width: calc(297mm - 40mm);
+  height: calc(210mm - 40mm);
 }
 
 .container {
@@ -29,6 +29,7 @@ main {
 }
 .container {
   border: 3px solid red;
+  background: white;
 }
 .img-box {
   border: 2px solid aqua;
