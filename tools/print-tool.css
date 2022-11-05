@@ -1,10 +1,10 @@
 .a4-portrait {
-  width: calc(210mm - 60mm);
+  width: calc(210mm - 50mm);
   height: calc(297mm - 60mm);
 }
 
 .a4-landscape {
-  width: calc(297mm - 60mm);
+  width: calc(297mm - 50mm);
   height: calc(210mm - 60mm);
 }
 
