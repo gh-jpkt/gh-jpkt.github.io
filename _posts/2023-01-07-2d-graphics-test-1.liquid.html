@@ -1,0 +1,29 @@
+---
+layout: post
+title: 2D Graphics test 1
+---
+
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <!-- Essential metadata -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {% feed_meta %} {% seo %}
+    <!-- Assets -->
+    {% include common-assets.liquid.html %}
+    <link
+      rel="stylesheet"
+      href="/assets/css/2023-01-07-2d-graphics-test-1.css"
+    />
+    <script defer src="/assets/js/2023-01-07-2d-graphics-test-1.js"></script>
+  </head>
+  <body>
+    {% include brief-description.liquid.html content="This HTML document is used
+    to place some random 2D graphics Web apps." %}
+    <noscript>{% include script-fallback.liquid.html %}</noscript>
+    <canvas class="canvas-graphics-test">
+      {% include canvas-fallback.liquid.html %}
+    </canvas>
+  </body>
+</html>
