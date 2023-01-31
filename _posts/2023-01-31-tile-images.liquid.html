@@ -1,0 +1,81 @@
+---
+title: 複数の画像を1ページに収めて印刷するWeb app
+date: 2023-01-31
+categories: tools
+---
+
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="gh-jpkt" />
+    <meta
+      name="description"
+      content="選択された複数の画像をA4 1ページに収めて印刷するWeb app"
+    />
+    <title>{{ page.title }}</title>
+    <link rel="stylesheet" href="/assets/2023-01-31-tile-images.css" />
+    <script defer src="/assets/2023-01-31-tile-images.js"></script>
+  </head>
+  <body>
+    <header class="not-printed">
+      <nav>
+        <!-- "Return to the homepage" Button -->
+        <a href="/" class="return-mark">トップページに戻る</a>
+      </nav>
+      <noscript>
+        <p>JavaScriptを有効にしてください.</p>
+      </noscript>
+    </header>
+    <main>
+      <h1 class="not-printed">{{ page.title }}</h1>
+      <section class="controls not-printed">
+        <h2>設定</h2>
+        <p>
+          <label for="slc-size">用紙サイズ:</label>
+          <select id="slc-size">
+            <option value="a4">A4</option>
+          </select>
+        </p>
+        <p>
+          <label for="slc-dir">用紙の向き(現段階では印刷画面からのみ設定可能):</label>
+          <select id="slc-dir">
+            <option value="portrait">縦長</option>
+            <option value="landscape">横長</option>
+          </select>
+        </p>
+        <p>
+          <label for="slc-cols">列数:</label>
+          <select id="slc-cols">
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+          </select>
+        </p>
+      </section>
+      <section class="controls not-printed">
+        <h2>画像ファイルの選択</h2>
+        <p>
+          <label for="file-images">画像ファイルの選択:</label>
+          <input id="file-images" type="file" multiple />
+        </p>
+      </section>
+      <section class="sheet">
+        <div class="not-printed">
+          <h2>用紙エリア</h2>
+          <p>以下の枠内に表示される部分のみが印刷されます.</p>
+        </div>
+        <div class="page a4-portrait tile-2">
+          <p>(ここに画像が表示されます.)</p>
+        </div>
+        <template id="tpl-tile">
+          <img src="" alt="Tiled image" class="tile" />
+        </template>
+      </section>
+    </main>
+    <footer class="not-printed">
+      <!-- As of now, there is nothing here. -->
+    </footer>
+  </body>
+</html>
