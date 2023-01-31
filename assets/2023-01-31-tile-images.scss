@@ -1,0 +1,109 @@
+---
+---
+
+/***
+ * date-created: 2023-01-31
+ * date-last-updated: 2023-01-31
+ * author: gh-jpkt
+ * title: 2023-01-31-tile-images.css
+ * digest: CSS file for `2023-01-31-tile-images.liquid.html`
+ */
+
+/***
+ * Styles for `@media print`
+ */
+@media print {
+  .not-printed {
+    display: none;
+  }
+}
+
+/***
+ * Navigation on `<header>`
+ */
+.return-mark {
+  border: 3px solid yellowgreen;
+  border-radius: 1em;
+  padding: 0.5em;
+  background-color: antiquewhite;
+}
+.return-mark::before {
+  margin-inline-end: 0.5em;
+  border: 1px solid blue;
+  border-radius: 1em;
+  background-color: aquamarine;
+  font-size: large;
+  font-weight: bold;
+  color: green;
+  content: "\21A9";
+}
+
+/***
+ * Tiling elements
+ */
+@mixin tile($cols) {
+  display: grid;
+  grid-template-columns: repeat($cols, 1fr);
+}
+.tile-2 {
+  @include tile(2);
+}
+.tile-3 {
+  @include tile(3);
+}
+.tile-4 {
+  @include tile(4);
+}
+
+/***
+ * Controls
+ */
+.controls {
+  border: 3px solid yellowgreen;
+}
+
+/***
+ * Printed page and underlying sheet
+ */
+.sheet {
+  background-color: gainsboro;
+}
+.page {
+  overflow: hidden;
+  background-color: white;
+}
+@media screen {
+  .sheet {
+    border: 3px solid yellowgreen;
+    padding: 0.5em;
+  }
+  .page {
+    border: 3px solid black;
+  }
+}
+
+/***
+ * Tile
+ */
+.tile {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/***
+ * Page size
+ *
+ * FIXME: Setting the page size doesn't work
+ */
+/***
+
+.a4-portrait {
+  width: calc(210mm - 0mm);
+  height: calc(297mm - 0mm);
+}
+.a4-landscape {
+  width: calc(297mm - 0mm);
+  height: calc(210mm - 0mm);
+}
+
+ */
