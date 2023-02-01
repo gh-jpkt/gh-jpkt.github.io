@@ -1,9 +1,9 @@
 /**
- * date-created: 2023-01-31
- * date-last-updated: 2023-01-31
+ * date-created: 2023-02-01
+ * date-last-updated: 2023-02-01
  * author: gh-jpkt
- * title: 2023-01-31-tile-images.js
- * digest: JavaScript file for `2023-01-31-tile-images.liquid.html`
+ * title: 2023-02-01-tile-images-new.js
+ * digest: Another version of `2023-02-01-tile-images.js` that uses static initialization blocks and can't be used on many mobile browsers as of 2023-02-01
  */
 
 "use strict";
@@ -21,6 +21,16 @@ function assert(expression, onFail) {
 
 /** Class representing a tile page */
 class TilePage {
+  /***
+   * Static initialization blocks
+   */
+  static {
+    this.#templateTile = document.querySelector("#tpl-tile");
+    assert(this.#templateTile, () => {
+      console.error("Failed to get the <template> element for tile.");
+    });
+  }
+
   /***
    * Public instance methods
    */
@@ -48,7 +58,7 @@ class TilePage {
   }
 
   /***
-   * Static private properties
+   * Static private fields
    */
   /**
    * @type {HTMLTemplateElement}
@@ -56,17 +66,7 @@ class TilePage {
   static #templateTile;
 
   /***
-   * Static initialization blocks
-   */
-  static {
-    TilePage.#templateTile = document.querySelector("#tpl-tile");
-    assert(TilePage.#templateTile, () => {
-      console.error("Failed to get the <template> element for tile.");
-    });
-  }
-
-  /***
-   * Private instance properties
+   * Private instance fields
    */
   /**
    * @type {HTMLElement}
@@ -97,7 +97,7 @@ class TilePage {
    */
   #recreateElement(size, direction, nColumns) {
     const newElement = document.createElement("div");
-    newElement.className = `page ${size}-${direction} tile-${nColumns}`;
+    newElement.className = `page ${size}-${direction} tile-page-${nColumns}`;
     this.#element.replaceWith(newElement);
     this.#element = newElement;
   }
@@ -116,13 +116,20 @@ class TilePage {
 }
 
 /***
- * Create a TilePage object and add corresponding event listeners.
+ * Manipulate the DOM.
+ */
+/***
+ * Create a TilePage object.
  */
 const eTilePage = document.querySelector(".page");
 assert(eTilePage, () => {
   console.error("Failed to get the HTML element for the tile page.");
 });
 const tilePage = new TilePage(eTilePage);
+
+/***
+ * Add event listeners.
+ */
 for (const elm of document.querySelectorAll("select")) {
   elm.addEventListener("change", updateTilePage);
 }

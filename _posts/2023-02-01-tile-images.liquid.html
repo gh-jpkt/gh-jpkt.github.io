@@ -1,8 +1,16 @@
 ---
 title: 複数の画像を1ページに収めて印刷するWeb app
-date: 2023-01-31
+date: 2023-02-01
 categories: tools
 ---
+
+<!--
+  - date-created: 2023-02-01
+  - date-last-updated: 2023-02-01
+  - author: gh-jpkt
+  - title: 2023-02-01-tile-images.liquid.html
+  - digest: Web app to tile the uploaded images on a page for printing
+  -->
 
 <!DOCTYPE html>
 <html lang="ja">
@@ -15,22 +23,29 @@ categories: tools
       content="選択された複数の画像をA4 1ページに収めて印刷するWeb app"
     />
     <title>{{ page.title }}</title>
-    <link rel="stylesheet" href="/assets/2023-01-31-tile-images.css" />
-    <script defer src="/assets/2023-01-31-tile-images.js"></script>
+    <link rel="stylesheet" href="/assets/2023-02-01-tile-images.css" />
+    <script defer src="/assets/2023-02-01-tile-images.js"></script>
   </head>
   <body>
     <header class="not-printed">
       <nav>
-        <!-- "Return to the homepage" Button -->
-        <a href="/" class="return-mark">トップページに戻る</a>
+        <p>
+          <span class="return-mark"><a href="/">トップページに戻る</a></span>
+        </p>
       </nav>
       <noscript>
-        <p>JavaScriptを有効にしてください.</p>
+        <section class="warning">
+          <p>このWeb appを利用するには, JavaScriptを有効にする必要があります.</p>
+        </section>
       </noscript>
     </header>
     <main>
       <h1 class="not-printed">{{ page.title }}</h1>
-      <section class="controls not-printed">
+      <section class="not-printed">
+        <h2>注意事項</h2>
+        <p>現段階では, 用紙サイズと用紙の向きは印刷画面からのみ変更可能です.</p>
+      </section>
+      <section class="not-printed">
         <h2>設定</h2>
         <p>
           <label for="slc-size">用紙サイズ:</label>
@@ -39,7 +54,7 @@ categories: tools
           </select>
         </p>
         <p>
-          <label for="slc-dir">用紙の向き(現段階では印刷画面からのみ設定可能):</label>
+          <label for="slc-dir">用紙の向き:</label>
           <select id="slc-dir">
             <option value="portrait">縦長</option>
             <option value="landscape">横長</option>
@@ -54,7 +69,7 @@ categories: tools
           </select>
         </p>
       </section>
-      <section class="controls not-printed">
+      <section class="not-printed">
         <h2>画像ファイルの選択</h2>
         <p>
           <label for="file-images">画像ファイルの選択:</label>
@@ -66,8 +81,8 @@ categories: tools
           <h2>用紙エリア</h2>
           <p>以下の枠内に表示される部分のみが印刷されます.</p>
         </div>
-        <div class="page a4-portrait tile-2">
-          <p>(ここに画像が表示されます.)</p>
+        <div class="page a4-portrait tile-page-2">
+          <p>ここに画像が表示されます...</p>
         </div>
         <template id="tpl-tile">
           <img src="" alt="Tiled image" class="tile" />

@@ -1,0 +1,133 @@
+---
+---
+
+/***
+ * date-created: 2023-02-01
+ * date-last-updated: 2023-02-01
+ * author: gh-jpkt
+ * title: 2023-02-01-tile-images.css
+ * digest: CSS file for `2023-02-01-tile-images.liquid.html`
+ */
+
+/***
+ * CSS variables
+*/
+:root {
+  --border-light: 3px solid chartreuse;
+  --color-light: greenyellow;
+  --color-dark: mediumseagreen;
+  --color-snow: lightcyan;
+  --color-dim: skyblue;
+}
+
+/***
+ * Common styles
+ */
+body {
+  background-color: var(--color-dim);
+}
+header {
+  background-color: var(--color-dark);
+  padding: 1em;
+}
+footer {
+  background-color: var(--color-dark);
+  padding: 1em;
+}
+section {
+  background-color: var(--color-light);
+  border: var(--border-light);
+  padding: 1em;
+}
+
+/***
+ * Warning
+ */
+.warning {
+  background-color: cornsilk;
+  border: 3px solid crimson;
+  padding: 0;
+  padding-inline-start: 1em;
+}
+
+/***
+ * Navigation
+ */
+.return-mark {
+  border: var(--border-light);
+  border-radius: 1em;
+  padding: 0.3em;
+  background-color: var(--color-snow);
+  text-decoration: none;
+}
+.return-mark::before {
+  margin-inline-end: 0.5em;
+  color: var(--color-dark);
+  content: "\21A9";
+}
+
+/***
+ * Printed page and underlying sheet
+ */
+.sheet {
+  background-color: var(--color-snow);
+}
+.page {
+  overflow: hidden;
+  border: 3px solid black;
+  background-color: white;
+}
+
+/***
+ * Tile Page
+ */
+@mixin tile-page($cols) {
+  display: grid;
+  grid-template-columns: repeat($cols, 1fr);
+}
+.tile-page-2 {
+  @include tile-page(2);
+}
+.tile-page-3 {
+  @include tile-page(3);
+}
+.tile-page-4 {
+  @include tile-page(4);
+}
+.tile {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/***
+ * Hidden things when printed
+ */
+@media print {
+  .not-printed {
+    display: none;
+  }
+  .sheet {
+    border: none;
+  }
+  .page {
+    border: none;
+  }
+}
+
+/***
+ * Page size
+ *
+ * FIXME: Setting the page size doesn't work
+ */
+/***
+
+.a4-portrait {
+  width: calc(210mm - 0mm);
+  height: calc(297mm - 0mm);
+}
+.a4-landscape {
+  width: calc(297mm - 0mm);
+  height: calc(210mm - 0mm);
+}
+
+ */

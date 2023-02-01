@@ -52,3 +52,10 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+####
+# Settings added by gh-jpkt
+#
+domain: gh-jpkt.github.io
+#
+####
