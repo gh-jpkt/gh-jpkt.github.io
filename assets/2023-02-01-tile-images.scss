@@ -3,7 +3,7 @@
 
 /***
  * date-created: 2023-02-01
- * date-last-updated: 2023-02-01
+ * date-last-updated: 2023-02-02
  * author: gh-jpkt
  * title: 2023-02-01-tile-images.css
  * digest: CSS file for `2023-02-01-tile-images.liquid.html`
@@ -85,6 +85,9 @@ section {
   display: grid;
   grid-template-columns: repeat($cols, 1fr);
 }
+.tile-page-1 {
+  @include tile-page(1);
+}
 .tile-page-2 {
   @include tile-page(2);
 }
@@ -108,6 +111,7 @@ section {
   }
   .sheet {
     border: none;
+    padding: 0;
   }
   .page {
     border: none;
@@ -117,7 +121,8 @@ section {
 /***
  * Page size
  *
- * FIXME: Setting the page size doesn't work
+ * NOTE: The page size is set via a browser's "Print" dialog, so controllers for that don't have to on this Web app.
+ * FUTURE: However, this Web app will be more useful if it shows a grid whose cells' size is same as the printed page, so this feature will be implemented in future.
  */
 /***
 

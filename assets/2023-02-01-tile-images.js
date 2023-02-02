@@ -1,6 +1,6 @@
 /**
  * date-created: 2023-02-01
- * date-last-updated: 2023-02-01
+ * date-last-updated: 2023-02-02
  * author: gh-jpkt
  * title: 2023-02-01-tile-images.js
  * digest: JavaScript file for `2023-02-01-tile-images.liquid.html`
@@ -21,6 +21,23 @@ function assert(expression, onFail) {
 
 /** Class representing a tile page */
 class TilePage {
+  /***
+   * Static initialization blocks
+   * 
+   * NOTE: [Static initialization blocks isn't supported on many mobile browsers as of 2023-02-02][https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Static_initialization_blocks], so a fallback (using `TilePage.init()` method) is used for now.
+   */
+
+  /***
+
+  static {
+    this.#templateTile = document.querySelector("#tpl-tile");
+    assert(this.#templateTile, () => {
+      console.error("Failed to get the <template> element for tile.");
+    });
+  }
+
+   */
+
   /***
    * Public static methods
    */

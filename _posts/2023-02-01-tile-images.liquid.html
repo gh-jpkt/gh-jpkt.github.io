@@ -6,7 +6,7 @@ categories: tools
 
 <!--
   - date-created: 2023-02-01
-  - date-last-updated: 2023-02-01
+  - date-last-updated: 2023-02-02
   - author: gh-jpkt
   - title: 2023-02-01-tile-images.liquid.html
   - digest: Web app to tile the uploaded images on a page for printing
@@ -18,13 +18,10 @@ categories: tools
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="gh-jpkt" />
-    <meta
-      name="description"
-      content="選択された複数の画像をA4 1ページに収めて印刷するWeb app"
-    />
+    <meta name="description" content="{{ page.title }}" />
     <title>{{ page.title }}</title>
     <link rel="stylesheet" href="/assets/2023-02-01-tile-images.css" />
-    <script defer src="/assets/2023-02-01-tile-images.js"></script>
+    <script src="/assets/2023-02-01-tile-images.js" defer></script>
   </head>
   <body>
     <header class="not-printed">
@@ -35,7 +32,9 @@ categories: tools
       </nav>
       <noscript>
         <section class="warning">
-          <p>このWeb appを利用するには, JavaScriptを有効にする必要があります.</p>
+          <p>
+            このWeb appを利用するには, JavaScriptを有効にする必要があります.
+          </p>
         </section>
       </noscript>
     </header>
@@ -49,13 +48,13 @@ categories: tools
         <h2>設定</h2>
         <p>
           <label for="slc-size">用紙サイズ:</label>
-          <select id="slc-size">
+          <select id="slc-size" disabled>
             <option value="a4">A4</option>
           </select>
         </p>
         <p>
           <label for="slc-dir">用紙の向き:</label>
-          <select id="slc-dir">
+          <select id="slc-dir" disabled>
             <option value="portrait">縦長</option>
             <option value="landscape">横長</option>
           </select>
@@ -63,6 +62,7 @@ categories: tools
         <p>
           <label for="slc-cols">列数:</label>
           <select id="slc-cols">
+            <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
             <option value="4">4</option>
