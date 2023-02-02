@@ -1,0 +1,24 @@
+{
+  "name": "gh-jpkt.github.io",
+  "version": "1.0.0",
+  "description": "Welcome to gh-jpkt's GitHub Pages site!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gh-jpkt/gh-jpkt.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gh-jpkt/gh-jpkt.github.io/issues"
+  },
+  "homepage": "https://github.com/gh-jpkt/gh-jpkt.github.io#readme",
+  "devDependencies": {
+    "eslint": "^8.33.0",
+    "eslint-config-google": "^0.14.0"
+  }
+}
