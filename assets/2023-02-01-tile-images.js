@@ -26,7 +26,6 @@ class TilePage {
    * 
    * NOTE: [Static initialization blocks isn't supported on many mobile browsers as of 2023-02-02][https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Static_initialization_blocks], so a fallback (using `TilePage.init()` method) is used for now.
    */
-
   /***
 
   static {
