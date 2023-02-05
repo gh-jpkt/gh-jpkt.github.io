@@ -1,0 +1,21 @@
+<!--
+  - # default--header.liquid.html
+  -
+  - ```yaml
+  - --metadata-ctm:
+  -   created: 2023-02-06
+  -   last-updated: 2023-02-06
+  -   author: gh-jpkt
+  -   title: Default content of `<header>` elements
+  -   digest: Contains "Return to home" button and warning that JavaScript isn't enabled
+  - ```
+  -
+  - ## Parameters
+  -
+  - (None)
+-->
+
+<nav>
+  <p>{% include body/return-to-home--body.liquid.html %}</p>
+</nav>
+{% include noscript/warning--noscript.liquid.html %}

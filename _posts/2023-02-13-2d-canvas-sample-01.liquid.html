@@ -1,0 +1,49 @@
+---
+title: 2D canvas sample 01
+date: 2023-02-13
+categories: JavaScript
+---
+
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    {% include head/meta--head.liquid.html %} {% include
+    head/title--head.liquid.html title=page.title %}
+    <link rel="stylesheet" href="/assets/css/common--0-1-0.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "modules/": "/assets/modules/0.1.0/"
+        }
+      }
+    </script>
+    <script
+      type="module"
+      src="/assets/modules/0.1.0/2d-canvas-sample-01--0-1-0.mjs"
+    ></script>
+  </head>
+  <body>
+    <header>
+      {% include header/default--header.liquid.html %}
+      <ul>
+        <li>created: <time>2023-02-13</time></li>
+        <li>last-updated: <time>2023-02-13</time></li>
+        <li>author: gh-jpkt</li>
+        <li>title:</li>
+        <li>digest: Demonstrating 2D canvas.</li>
+      </ul>
+    </header>
+    <main>
+      <h1>{{ page.title }}</h1>
+      <section>
+        <!-- DEV: A temporary FPS counter -->
+        <p>FPS: <span id="fps-counter"></span></p>
+        <!-- NOTE: This wrapper for &lt;canvas&gt; elements may be used in future.  -->
+        <div id="wrapper" class="wrapper-canvas">
+          <canvas id="canvas" class="simple-box"></canvas>
+        </div>
+      </section>
+    </main>
+    <footer></footer>
+  </body>
+</html>
