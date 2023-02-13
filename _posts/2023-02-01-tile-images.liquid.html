@@ -5,38 +5,26 @@ categories: tools
 ---
 
 <!--
-  - date-created: 2023-02-01
-  - date-last-updated: 2023-02-02
-  - author: gh-jpkt
-  - title: 2023-02-01-tile-images.liquid.html
-  - digest: Web app to tile the uploaded images on a page for printing
-  -->
-
+- date-created: 2023-02-01
+- date-last-updated: 2023-02-07
+- author: gh-jpkt
+- title: 2023-02-01-tile-images.liquid.html
+- digest: Web app to tile the uploaded images on a page for printing
+-->
 <!DOCTYPE html>
 <html lang="ja">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="author" content="gh-jpkt" />
-    <meta name="description" content="{{ page.title }}" />
-    <title>{{ page.title }}</title>
-    <link rel="stylesheet" href="/assets/2023-02-01-tile-images.css" />
-    <script src="/assets/2023-02-01-tile-images.js" defer></script>
+    {% include head/meta--head.liquid.html %}
+    {% include head/title--head.liquid.html title=page.title %}
+    <link rel="stylesheet" href="/assets/css/2023-02-01-tile-images.css" />
+    <script src="/assets/js/2023-02-01-tile-images.js" defer></script>
   </head>
   <body>
     <header class="not-printed">
       <nav>
-        <p>
-          <span class="return-mark"><a href="/">トップページに戻る</a></span>
-        </p>
+        <p>{% include body/return-to-home--body.liquid.html %}</p>
       </nav>
-      <noscript>
-        <section class="warning">
-          <p>
-            このWeb appを利用するには, JavaScriptを有効にする必要があります.
-          </p>
-        </section>
-      </noscript>
+      {% include noscript/warning--noscript.liquid.html %}
     </header>
     <main>
       <h1 class="not-printed">{{ page.title }}</h1>
